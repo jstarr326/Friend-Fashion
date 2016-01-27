@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FriendFashion</title>
+  <title><%= yield(:title) %> | Fashion Friend</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+ <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "About", static_pages_about_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
 
 <%= yield %>
 
