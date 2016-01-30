@@ -1,13 +1,15 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb blah</p>
 
+
+<p> Welcome <%=current_user.name%></p>
 <p><%= image_tag current_user.propic %></p>
 
-
+<h1> Scroll through all available items below! </h1>
 <% @items.each do |item| %>
 
-	item.name
-
-	<%=item.description%>
+	<p> Need to fill in picture and name of poster</p>
+	<p> Item Name: <%=item.name%></p>
+	<p> Item Description: <%=item.description%></p>
+	<p> Item Category: <%=item.category%></p>
+	<p> Item Size: <%=item.size%></p>
 	<%end%>
 
