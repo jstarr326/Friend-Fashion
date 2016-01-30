@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+      @items = Item.search_for(params[:q])
   end
 
   def new

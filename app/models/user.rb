@@ -40,6 +40,11 @@ def friends
   facebook.get_connections("me", "friends")
 end
 
+def propic
+  profile = facebook.get_object('me')
+  facebook.get_picture(profile['id'], type: :large)
+end
+
 
 
 end
