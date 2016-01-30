@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 def after_sign_in_path_for(resource_or_scope)
 	if current_user
-		static_pages_about_path
+		items_path
 else
 	new_user_session_path
 end
