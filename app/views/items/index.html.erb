@@ -1,6 +1,9 @@
 
 
 <p> Welcome <%=current_user.name%></p>
+
+<%= link_to "Post Items", users_show_path, class: "btn btn-log btn-primary" %>
+
 <p><%= image_tag current_user.propic %></p>
 
 <h1> Scroll through all available items below! </h1>
