@@ -1,14 +1,18 @@
 class ItemsController < ApplicationController
+
   def index
-      @items = Item.search_for(params[:q])
+
+      @items = Item.exclude(current_user)
+      #Item.search_for(params[:q])
   end
 
   def new
-    @items = item.new()
+    @item = Item.new()
   end
 
   def create
     @item = Item.new(safe_item_params)
+    @item.user = current_user
     if @item.save()
       redirect_to @item
     else

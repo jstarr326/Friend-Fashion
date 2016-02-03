@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
 
 
+has_many :items
+
 
 def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -37,7 +39,8 @@ end
 
 
 def friends
-  facebook.get_connections("me", "friends")
+  friends = facebook.get_connections("me", "friends")
+
 end
 
 def propic
@@ -45,6 +48,22 @@ def propic
   facebook.get_picture(profile['id'], type: :large)
 end
 
+def user_friends
+  friends.each do |f|
+  f[:image]= @facebook.get_picture(f["id"])
+end
+end
+
+
+def user_friends
+  user_friends = []
+  friends.map do |friend|
+    if User.find_by_uid(friend["id"]) != nil
+      user_friends.push(User.find_by_uid(friend["id"]))
+    end
+  end
+  user_friends
+end
 
 
 end

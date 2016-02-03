@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160130225726) do
     t.text     "description"
     t.string   "category"
     t.string   "size"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
