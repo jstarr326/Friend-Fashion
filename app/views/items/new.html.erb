@@ -21,4 +21,8 @@
 
 <h2> Items You Have Posted </h2>
 <% @current_user.items.each do |item| %>
-	<p> item.name </p>
+	<p> Item Name: <%=item.name%></p>
+	<p> Item Description: <%=item.description%></p>
+	<p> Item Category: <%=item.category%></p>
+	<p> Item Size: <%=item.size%></p>
+	<%end%>

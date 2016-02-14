@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @items = current_user.items
     @item = Item.new()
   end
 
@@ -16,7 +17,8 @@ class ItemsController < ApplicationController
     @item = Item.new(safe_item_params)
     @item.user = current_user
     if @item.save()
-      redirect_to @item
+      flash[:success] = "Item successfully saved!"
+      redirect_to new_item_path
     else
       render 'new'
     end
