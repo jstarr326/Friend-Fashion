@@ -17,3 +17,8 @@
 
 <%= i.submit %>
 <% end %>
+
+
+<h2> Items You Have Posted </h2>
+<% @current_user.items.each do |item| %>
+	<p> item.name </p>
