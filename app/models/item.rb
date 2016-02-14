@@ -12,6 +12,10 @@ class Item < ActiveRecord::Base
   		where("user_id != :user", :user => "#{current_user.id}")
   end
 
+  def self.friends_items(friends_list)
+  	where("user_id in (:friends_list)", :friends_list => friends_list)
+  end
+
 
 
 end

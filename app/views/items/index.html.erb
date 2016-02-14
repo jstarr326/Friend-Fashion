@@ -1,14 +1,14 @@
 
 
-<p> Welcome <%=current_user.name%></p>
+<p> Welcome <%=current_user.name%>!</p>
 
-<%= link_to "Post Items", new_item_path, class: "btn btn-log btn-primary" %>
+<%= link_to "Post Items", new_item_path, class: "btn btn-log btn-primary pull-right" %>
 
 <p><%= image_tag current_user.propic %></p>
 
-<p> <%= current_user.user_friends %></p>
 
 <h1> Scroll through all available items below! </h1>
+
 <% @items.each do |item| %>
 
 	<p> Need to fill in picture and name of poster</p>

@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
 
   def index
-
-      @items = Item.exclude(current_user)
+    #[1, 2]
+      friends_list = current_user.user_friends
+      @items = Item.friends_items(friends_list)
+      #Item.exclude(current_user)
       #Item.search_for(params[:q])
   end
 

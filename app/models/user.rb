@@ -48,18 +48,26 @@ def propic
   facebook.get_picture(profile['id'], type: :large)
 end
 
-def user_friends
+def user_friends_pic
   friends.each do |f|
   f[:image]= @facebook.get_picture(f["id"])
 end
 end
 
+# def user_friends_items
+#   user_friends.each_value {|value| value.items}
+#   item_hash = {"#{friend["id"]}": [value.items]}
+# end
+# end
+
+
 
 def user_friends
   user_friends = []
-  friends.map do |friend|
+  friends.each do |friend|
     if User.find_by_uid(friend["id"]) != nil
       user_friends.push(User.find_by_uid(friend["id"]))
+      #user_friends["#{friend["id"]}"] = User.find_by_uid(friend["id"])
     end
   end
   user_friends
