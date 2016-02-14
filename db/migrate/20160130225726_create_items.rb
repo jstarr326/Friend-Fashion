@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.text :description
       t.string :category
       t.string :size
+      t.string :price
       t.belongs_to :user
 
       t.timestamps null: false

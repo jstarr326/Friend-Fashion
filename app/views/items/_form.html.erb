@@ -1,0 +1,28 @@
+<% if @item.errors.any? %>
+<h2> There was an error saving your item. </h2>
+ <ul>
+    <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @item, html: { multipart: true } do |i|%>
+<%= i.label :name %>:
+<%= i.text_field :name %><br />
+
+<%= i.label :description %>:
+<%= i.text_field :description %><br />
+
+<%= i.label :category %>:
+<%= i.text_field :category %><br />
+
+<%= i.label :size %>:
+<%= i.text_field :size %><br />
+
+<%= i.label :price %>:
+<%= i.text_field :price %><br />
+
+
+<%= i.submit %>
+<% end %>

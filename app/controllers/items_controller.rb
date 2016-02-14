@@ -38,6 +38,6 @@ class ItemsController < ApplicationController
   end
 
   def safe_item_params
-    params.require('item').permit(:name, :description, :category, :size)
+    params.require('item').permit(:name, :description, :category, :size, :price)
   end
 end

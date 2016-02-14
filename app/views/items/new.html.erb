@@ -2,21 +2,7 @@
 
 <p><%= image_tag current_user.propic %></p>
 
-<%= form_for @item do |i|%>
-<%= i.label :name %>:
-<%= i.text_field :name %><br />
-
-<%= i.label :description %>:
-<%= i.text_field :description %><br />
-
-<%= i.label :category %>:
-<%= i.text_field :category %><br />
-
-<%= i.label :size %>:
-<%= i.text_field :size %><br />
-
-<%= i.submit %>
-<% end %>
+<%= render 'form' %>
 
 
 <h2> Items You Have Posted </h2>
