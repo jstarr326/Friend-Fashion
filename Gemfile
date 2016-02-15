@@ -5,11 +5,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 
 gem 'bootstrap-sass'
+gem 'google-webfonts-rails', '~> 0.0.4'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
+gem "paperclip", "~> 4.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 

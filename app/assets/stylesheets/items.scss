@@ -1,3 +1,19 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+label{
+  width: 4em;
+  float: left;
+  text-align: left;
+  margin-right: 1.8em;
+  display: block
+}
+
+text_field{
+  width: 4em;
+  float: left;
+  text-align: right;
+  margin-right: 1.8em;
+  display: block
+}
