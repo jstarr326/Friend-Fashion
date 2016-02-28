@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
 	belongs_to :user
-	validates :name, :description, :category, :size, :price, :image, presence: true
+	validates :name, :description, :size, :price, :image, presence: true
 	has_attached_file :image,   styles: { thumb: ["160x160#", :jpg], original: ['500x500>', :jpg] },
                   convert_options: { thumb: "-quality 75 -strip",
                                      original: "-quality 85 -strip" }
